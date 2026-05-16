@@ -1,0 +1,68 @@
+# ==========================================
+# 1. SECURITY & ENVIRONMENT VARIABLES
+# ==========================================
+.env
+.env.*
+
+# ==========================================
+# 2. PYTHON CORE
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# ==========================================
+# 3. VIRTUAL ENVIRONMENTS
+# ==========================================
+venv/
+env/
+ENV/
+.venv/
+env.bak/
+venv.bak/
+
+# ==========================================
+# 4. DATABASE
+# ==========================================
+*.sqlite3
+db.sqlite3
+
+# ==========================================
+# 5. USER UPLOADS & STATIC FILES
+# ==========================================
+media/
+# Since your settings.py points MEDIA_ROOT to 'menu', we must ignore it!
+menu/
+# Ignore the folder where collectstatic gathers files for production
+staticfiles/
+
+# ==========================================
+# 6. MIGRATIONS
+# ==========================================
+# This safely ignores all migration files EXCEPT the required __init__.py files
+*/migrations/*.py
+!*/migrations/__init__.py
+*/migrations/*.pyc
+
+# ==========================================
+# 7. IDEs & EDITORS
+# ==========================================
+.idea/
+.vscode/
+.qodo/
+*.swp
+*.swo
+.project
+.pydevproject
+
+# ==========================================
+# 8. OS GENERATED FILES (Mac/Windows)
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

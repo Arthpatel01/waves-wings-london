@@ -1,0 +1,190 @@
+{% load static %}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+
+<head>
+    <!--====== USEFULL META ======-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Waves & Wings Restaurant is a simple restaraunt website for restaurant business" />
+    <meta name="keywords" content="restaurant, pizza, burger, business, house, online, delevery, html, coffee, cafe, bar" />
+    <meta name="author" content="BDEXPERT" />
+
+    <!--====== TITLE TAG ======-->
+    <title>{% block title %}Waves & Wings Restaurant{% endblock %}</title>
+
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="{% static 'assets/img/favi/favicon.ico' %}" />
+
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pogo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/timepicker.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="{% static 'assets/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    {% if messages %}
+        <div class="django-messages-wrapper">
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <i class="fa {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}"></i>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"><i class="fa fa-cutlery"></i></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+
+
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+
+
+<div class="footer-area" id="contact">
+        <div class="footer-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="footer-top section-padding text-center">
+                        <div class="footer-logo">
+                            <a href="{% url 'home' %}"><img class="footer-logo-img" src="{% static 'assets/img/main/logo2_bgr.png' %}" alt=""></a>
+                        </div>
+                        <div class="footer-address">
+                            {% if contact_info %}
+
+                                <p>{{ contact_info.address }}</p>
+
+                                <p><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+                                <p><a href="tel:{{ contact_info.phone|cut:' ' }}">{{ contact_info.phone }}</a></p>
+
+                            {% else %}
+                                <p>40, Colindale, Knightsbridge House, Kingsbury Road, NW9 8XG</p>
+                                <p><a href="mailto:contact@infowavesandwings.co.uk">contact@infowavesandwings.co.uk</a></p>
+                                <p><a href="tel:+447721981295">+44 77 2198 1295</a></p>
+                            {% endif %}
+                        </div>
+                        <!--<div class="footer-social-bookmark">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <!--<li><a href="#">Teams of use</a></li>
+                            <li><a href="#">Privicy Policy</a></li>
+                            <li><a href="#">SiteMap</a></li>
+                            <li><a href="#">Contact</a></li>-->
+                            <li><a href="{% url 'home' %}">Home</a></li>
+                            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 <a href="#">Waves & Wings Restaurant</a> All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOER AREA END-->
+
+
+    <!--====== SCRIPTS JS ======-->
+    <!--<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">--></script>
+    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="{% static 'assets/js/vendor/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.pogo-slider.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/stellar.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'assets/js/instafeed.min.js' %}"></script>
+    <script src="{% static 'assets/js/datepicker.min.js' %}"></script>
+    <script src="{% static 'assets/js/timepicker.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+
+    <!--===== ACTIVE JS=====-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+
+<script>
+        $(document).ready(function() {
+            // Wait 6 seconds (6000ms), then slide up and fade out smoothly
+            setTimeout(function() {
+                $(".django-messages-wrapper .alert").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                });
+            }, 6000);
+        });
+    </script>
+</body>
+
+
+</html>
+
+
+
+
+

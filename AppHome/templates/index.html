@@ -1,0 +1,1077 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="Discover Waves & Wings in London! Enjoy our signature golden-battered haddock, crispy chicken wings, gourmet burgers, and loaded fries. Book a table today." />
+    <meta name="keywords" content="Waves and Wings, London restaurant, Colindale, NW9 8XG, fish and chips, haddock, crispy chicken wings, spicy wings, seafood, burgers, loaded fries, takeaway, food delivery" />
+    <meta name="author" content="Waves & Wings" />
+
+    <meta property="og:title" content="Waves & Wings | Coastal Seafood & Crispy Chicken in London" />
+    <meta property="og:description" content="Welcome to the best coastal crunch in London! Check out our menu of fresh seafood, signature wings, and meal deals." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yourdomain.co.uk/" /> <meta property="og:image" content="{% static 'assets/img/main/logo2_bgr.png' %}" />
+    <meta property="og:site_name" content="Waves & Wings" />
+
+    <title>Waves & Wings | Seafood & Crispy Chicken in London</title>
+
+    <!--====== FAVICON ICON =======-->
+    <link rel="shortcut icon" type="image/ico" href="{% static 'assets/img/favi/favicon.ico' %}" />
+
+    <!--====== STYLESHEETS ======-->
+    <link rel="stylesheet" href="{% static 'assets/css/normalize.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/pogo-slider.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/timepicker.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!--====== MAIN STYLESHEETS ======-->
+    <link href="{% static 'assets/style.css' %}" rel="stylesheet">
+    <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
+
+    <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
+</head>
+
+<body>
+
+    {% if messages %}
+        <div class="django-messages-wrapper">
+            {% for message in messages %}
+                <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags }}{% endif %} alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <i class="fa {% if message.tags == 'success' %}fa-check-circle{% else %}fa-exclamation-circle{% endif %}"></i>
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!--- PRELOADER -->
+    <div class="preeloader">
+        <div class="preloader-spinner"><i class="fa fa-cutlery"></i></div>
+    </div>
+
+    <!--SCROLL TO TOP-->
+    <a href="#home" class="scrolltotop"><i class="fa fa-long-arrow-up"></i></a>
+
+    <!--START TOP AREA-->
+    <header class="top-area" id="home">
+        <div class="header-top-area">
+            <!--<div class="top-bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-7 col-lg-6 col-sm-8">
+                            <div class="call-to-action">
+                                <p><i class="fa fa-envelope-o"></i>Email: <a href="mailto:contact@infowavesandwings.co.uk ">contact@infowavesandwings.co.uk </a></p>
+                                <p><i class="fa fa-phone"></i>Telephone: <a href="callto:+447721981295">+44 77 2198 1295</a></p>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-lg-6 col-sm-4">
+                            <div class="book-table-popup">
+                                <a href="#reservation-form-modal" data-toggle="modal">Book a table</a>
+                            </div>
+                            <div class="top-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-feed"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+
+            <!--MAINMENU AREA-->
+            <div class="mainmenu-area" id="mainmenu-area">
+                <div class="mainmenu-area-bg"></div>
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="collapsed navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-scrollspy">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="#home" class="navbar-brand"><img class="nav-logo-img" src="{% static 'assets/img/main/logo2_bgr.png' %}" alt="logo"></a>
+                            <a href="#home" class="navbar-brand white"><img class="nav-logo-img" src="{% static 'assets/img/main/logo2_bgr.png' %}" alt="logo"></a>
+                        </div>
+                        <div class="collapse navbar-collapse bs-example-js-navbar-scrollspy">
+                            <div class="search-form-area">
+                                <div class="search-form-overlay"></div>
+                                <a class="search-form-trigger" href="#search-form">Search<span></span></a>
+                                <div id="search-form" class="search-form">
+                                    <form>
+                                        <input type="search" placeholder="Search...">
+                                    </form>
+                                </div>
+                            </div>
+                            <ul id="nav" class="nav navbar-nav">
+                                <li class="active"><a href="#home">Home</a> </li>
+                                <li><a href="#about">about us</a></li>
+                                <li><a href="#promotion">Offer</a></li>
+                                <li><a href="#menu">Menu</a></li>
+                                <li><a href="#team">team</a></li>
+                                <li><a href="#blog">blog</a></li>
+                                <!--<li><a href="#gallery">Gallery</a></li>-->
+                                <li><a href="#location">Find Us</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--END MAINMENU AREA END-->
+        </div>
+
+        <!--HHOME SLIDER AREA-->
+        <div class="slider-area">
+            <div class="pogoSlider">
+                <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url({% static 'assets/img/slider/slide_1.jpg' %}) no-repeat scroll 0 0 / cover;">
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Welcome to</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500"><span>Waves & Wings</span> Cafe & Restaurant</h1>
+                    <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a  href="#reservation-form-modal" data-toggle="modal">Reservation Now</a></h3>
+                </div>
+                <div class="pogoSlider-slide" data-transition="fade" style="background:url({% static 'assets/img/slider/slide_2.jpg' %}) no-repeat scroll 0 0 / cover;">
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Our menus</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">See What's <span>new</span> today</h1>
+                    <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#menu">Todays Menu</a></h3>
+                </div>
+                <div class="pogoSlider-slide" data-transition="fade" style="background:url({% static 'assets/img/slider/slide_3.jpg' %}) no-repeat scroll 0 0 / cover;">
+                    <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Get ready</h2>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">to <span>Join</span> with us</h1>
+                    <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a  href="#reservation-form-modal" data-toggle="modal">Book A Table</a></h3>
+                </div>
+            </div>
+        </div>
+        <!--HOME SLIDER AREA END-->
+
+    </header>
+    <!--END TOP AREA-->
+
+    <!--ABOUT AREA-->
+    <!--<section class="about-area section-padding" id="about">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Our Story</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="about-content">
+                        <p><span class="big-text">M</span> enc non elit libero. Quisque massa porta ut placerat lentesque non diam. Nam convallis porta rhoncus. Maecenas varius eget turpis suscipit porta sapien tinc Mauris tempor libero fringilla orci vivrra faucibue fringilla orci vivrra faucibus. Integer ullamcorper erat in tellus efficitur, quis porta sapien tincidunt. Nunc mattis lectus sed semper semper. </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="right-about-content">
+                        <p>Quisque sit amet turpis et ipsum elementum facilisis. Quisque sed placerat libero. Pellentesque nec tellus sollicitudin, sollicitudin ligula non, tristique nibh Donec vitae turpis sagittis, cursus nunc ac, aliquet nunc. Donec viverra vel massa at posuere. Aliquam et fringilla augue consequat posuere sem, eu ornares viverra veleso massa at posuere. Aliquam et fringilla augue</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="about-author-sign text-center">
+                        <img src="{% static 'assets/img/about/about_sign.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+    <section class="about-area section-padding" id="about">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Our Story</h2>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="about-content">
+                        <p><span class="big-text">W</span>elcome to Waves & Wings, where coastal freshness meets urban crunch right here in London! Our journey started with a simple, passionate idea: why choose between the finest treasures of the sea and the ultimate comfort of perfectly crisped wings? We set out to create a vibrant kitchen that honors both. Every dish we serve is a celebration of bold flavors, high-quality ingredients, and culinary craftsmanship, designed to bring a wave of excitement to your taste buds with every single bite.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="right-about-content">
+                        <p>From our sustainably sourced, golden-batter Fish & Seafood to our signature, succulent Chicken Wings tossed in a variety of house-crafted sauces, we refuse to compromise on quality. Whether you are grabbing a quick, satisfying Meal Deal on your lunch break or sharing a loaded fries feast with friends, Waves & Wings is built on a promise of good food and great flavor, every single time. Thank you for welcoming us into the neighborhood—we are proud to be your new local favorite!</p>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="about-author-sign text-center">
+                        <img src="{% static 'assets/img/about/about_sign.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--ABOUT AREA END-->
+
+    <!--SPEACIAL PROMOTIONS AREA-->
+    <!--<section class="promotions-area section-padding" id="promotion">
+        <div class="promotion-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Special Package</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="menu-discount-offer col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="single-promotions">
+                        <div class="promotions-img">
+                            <img src="{% static 'assets/img/promotions/promo_slide_1.jpg' %}" alt="">
+                        </div>
+                        <div class="promotions-details">
+                            <h3>40% off for 9'' - 12'' pizza - Wed, Thu, Friday only</h3>
+                            <p>Pizza 12 inch + 1 Side Dish + 1,5L Coke Bottle Only From 209,000</p>
+                            <a href="#" class="read-more">Order now</a>
+                        </div>
+                    </div>
+                    <div class="single-promotions">
+                        <div class="promotions-img">
+                            <img src="{% static 'assets/img/promotions/promo_slide_2.jpg' %}" alt="">
+                        </div>
+                        <div class="promotions-details">
+                            <h3>40% off for 9'' - 12'' pizza - Wed, Thu, Friday only</h3>
+                            <p>Pizza 12 inch + 1 Side Dish + 1,5L Coke Bottle Only From 209,000</p>
+                            <a href="#" class="read-more">Order now</a>
+                        </div>
+                    </div>
+                    <div class="single-promotions">
+                        <div class="promotions-img">
+                            <img src="{% static 'assets/img/promotions/promo_slide_3.jpg' %}" alt="">
+                        </div>
+                        <div class="promotions-details">
+                            <h3>40% off for 9'' - 12'' pizza - Wed, Thu, Friday only</h3>
+                            <p>Pizza 12 inch + 1 Side Dish + 1,5L Coke Bottle Only From 209,000</p>
+                            <a href="#" class="read-more">Order now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section class="promotions-area section-padding" id="promotion">
+    <div class="promotion-area-bg" data-stellar-background-ratio="0.6"></div>
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="area-title text-center">
+                    <h2>Special Package Deals</h2>
+                    <p>Check out our latest exclusive offers and premium combo bundles available this week.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {% if special_packages %}
+
+                <div class="menu-discount-offer col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+                    {% for package in special_packages %}
+                        <div class="single-promotions">
+                            <div class="promotions-img">
+                                {% if package.image %}
+                                    <img src="{{ package.image.url }}" alt="{{ package.title }}">
+                                {% else %}
+                                    <img src="{% static 'assets/img/promotions/promo_slide_1.jpg' %}" alt="Waves and Wings Promotion">
+                                {% endif %}
+                            </div>
+                            <div class="promotions-details">
+                                <h3>{{ package.title }} - <span style="color: #f1c40f;">{{ package.available_days }}</span></h3>
+
+                                <p>{{ package.description }}</p>
+
+                                <div class="promo-price-tag" style="margin-bottom: 15px; font-size: 18px; font-weight: 700; color: #ffffff;">
+                                    Only From £{{ package.price }}
+                                </div>
+
+                                <a href="#" data-toggle="modal" data-target="#reservation-form-modal" class="read-more">Book & Order Now</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <div class="col-xs-12 text-center" style="color: #ffffff; padding: 40px 0;">
+                    <i class="fa fa-gift" style="font-size: 40px; margin-bottom: 15px; opacity: 0.5;"></i>
+                    <p>Our kitchen is currently crafting new exclusive specials. Please check back shortly!</p>
+                </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+    <!--SPEACIAL PROMOTIONS AREA END-->
+
+    <!--MENUS AREA-->
+    <section class="menus-area section-padding" id="menu">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Today’s menu</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="food-menu-list-menu">
+                        <ul>
+                                <li class="filter active" data-filter="all">All</li>
+                            {% for category in categories %}
+                                <li class="filter" data-filter=".{{ category.slug }}">{{ category.name }}</li>
+                            {% endfor %}
+<!--                            <li class="filter active" data-filter="all">All</li>-->
+<!--                            <li class="filter" data-filter=".breakfast">Breakfast</li>-->
+<!--                            <li class="filter" data-filter=".lunch">Lunch</li>-->
+<!--                            <li class="filter" data-filter=".dinner">Dinner</li>-->
+<!--                            <li class="filter" data-filter=".coffee">Coffe</li>-->
+<!--                            <li class="filter" data-filter=".snacks">Snacks</li>-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--<div class="row food-menu-list">
+                {% for item in menu_items %}
+                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu {{ item.category__slug }} coffee snacks">
+                    <div class="single-menu-details">
+                        <div class="food-menu-img">
+                            {% if item.image %}
+                                <img src="{{ MEDIA_URL }}{{ item.image }}" alt="{{ item.name }}" class="menu-img-custom">
+                            {% else %}
+                                <img src="{% static 'assets/images/placeholder.jpg' %}" alt="{{ item.name }}">
+                            {% endif %}
+                        </div>
+                        <div class="food-menu-details">
+                            <h3>{{ item.name }} <span class="menu-price">${{ item.price }}</span></h3>
+                            <p class="menu-speacification"><span>- {{ item.description }}</span></p>
+                            &lt;!&ndash;<p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>
+                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu breakfast coffee snacks">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_1.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$20.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu dinner snacks">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_2.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$22.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu breakfast">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_3.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$17.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu dinner lunch breakfast snacks">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_4.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$28.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu lunch coffee">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_5.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$120.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+&lt;!&ndash;                <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu breakfast">&ndash;&gt;
+&lt;!&ndash;                    <div class="single-menu-details">&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-img"><img src="img/menu/menu_6.jpg" alt=""></div>&ndash;&gt;
+&lt;!&ndash;                        <div class="food-menu-details">&ndash;&gt;
+&lt;!&ndash;                            <h3>Cupcake Recipes <span class="menu-price">$100.00</span></h3>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Juice Fruit</span> <span>- Checken</span> <span>- Cherry</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Vegetable</span> <span>- Milk</span> <span>- Potato</span></p>&ndash;&gt;
+&lt;!&ndash;                            <p class="menu-speacification"><span>- Tomato</span> <span>- Chilli</span> <span>- Sesame</span></p>&ndash;&gt;
+&lt;!&ndash;                        </div>&ndash;&gt;
+&lt;!&ndash;                    </div>&ndash;&gt;
+&lt;!&ndash;                </div>&ndash;&gt;
+            </div>-->
+            <div class="row food-menu-list">
+    {% for item in menu_items %}
+    <div class="mix col-md-6 col-lg-6 col-sm-12 col-xs-12 single-menu {{ item.category__slug }}">
+        <div class="single-menu-details-custom">
+            <div class="food-menu-img-custom-wrap">
+                {% if item.image %}
+                    <img src="{{ MEDIA_URL }}{{ item.image }}" alt="{{ item.name }}" class="menu-img-custom">
+                {% else %}
+                    <img src="{% static 'assets/img/dish-placeholder.jpg' %}" alt="{{ item.name }}" class="menu-img-custom">
+                {% endif %}
+            </div>
+            <div class="food-menu-text-custom">
+                <h3>{{ item.name }} <span class="menu-price">${{ item.price }}</span></h3>
+                <p class="menu-speacification"><span>- {{ item.description }}</span></p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+        </div>
+    </section>
+    <!--MENUS AREA END-->
+
+    <!--RESERVATION BUTTON AREA-->
+    <section class="reservation-button-area section-padding" id="reservation-button">
+        <div class="reservation-button-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="resarvation-from-button text-center wow fadeIn">
+                        <h2>Book A table Now !</h2>
+                        <a href="#reservation-form-modal" class="reservation-button" data-toggle="modal">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <!-- RESERVATION FORM MODAL -->
+                    <!--<div class="modal fade" id="reservation-form-modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title">Table Booking Reservation Form</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="reservation-form">
+                                        <form method="POST" action="{% url 'home' %}" class="table-booking-form" id="reservation">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="action" value="reservation_form">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="name"><i class="fa fa-user-o"></i></label>
+                                                    <input type="text" name="name" id="name" placeholder="Name...">
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="email"><i class="fa fa-at"></i></label>
+                                                    <input type="email" name="email" id="email" placeholder="Email...">
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="mobile"><i class="fa fa-phone"></i></label>
+                                                    <input type="text" name="mobile" id="mobile" placeholder="Mobile...">
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="date"><i class="fa fa-calendar"></i></label>
+                                                    <input type="text" name="date" id="date" data-select="datepicker" placeholder="Date...">
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="time"><i class="fa fa-clock-o"></i></label>
+                                                    <input type="text" name="time" id="time" placeholder="Time...">
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
+                                                    <label for="person"><i class="fa fa-user"></i></label>
+                                                    <select name="person" id="person">
+                                                        <option value="2">2 Person</option>
+                                                        <option value="3">3 Person</option>
+                                                        <option value="4">4 Person</option>
+                                                        <option value="5">5 Person</option>
+                                                        <option value="6">6 Person</option>
+                                                        <option value="7">7 Person</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6 col-sm-6 col-sm-offset-3  col-md-offset-3  col-lg-offset-3 col-xs-12">
+                                                    <button type="submit">book a table</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <div class="modal fade modern-booking-modal" id="reservation-form-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Table Booking Request</h4>
+                <p class="modal-subtitle">Please fill out the form details below to submit your request.</p>
+            </div>
+            <div class="modal-body">
+                <div class="reservation-form">
+                    <form method="POST" action="{% url 'home' %}" class="table-booking-form" id="reservation">
+                        {% csrf_token %}
+                        <input type="hidden" name="action" value="reservation_form">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <input type="text" name="name" id="name" placeholder="Full Name..." required>
+                                    <label for="name" class="field-icon"><i class="fa fa-user-o"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <input type="email" name="email" id="email" placeholder="Email Address..." required>
+                                    <label for="email" class="field-icon"><i class="fa fa-at"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <input type="text" name="mobile" id="mobile" placeholder="Mobile Number..." required>
+                                    <label for="mobile" class="field-icon"><i class="fa fa-phone"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <input type="text" name="date" id="date" data-select="datepicker" placeholder="Select Date..." required autocomplete="off">
+                                    <label for="date" class="field-icon"><i class="fa fa-calendar"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <input type="text" name="time" id="time" placeholder="Select Time..." required autocomplete="off">
+                                    <label for="time" class="field-icon"><i class="fa fa-clock-o"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-field-wrapper">
+                                    <select name="person" id="person" required>
+                                        <option value="" disabled selected>Number of Guests...</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5 People</option>
+                                        <option value="6">6 People</option>
+                                        <option value="7">7+ People</option>
+                                    </select>
+                                    <label for="person" class="field-icon"><i class="fa fa-users"></i></label>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                                <button type="submit" class="submit-booking-btn">Request Table Reservation</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    <!-- RESERVATION FORM MODAL -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--RESERVATION BUTTON AREA END-->
+
+    <!--TEAM AREA-->
+    <!--<section class="team-area section-padding" id="team">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Our chefs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 team-slider">
+                    <div class="single-team-member text-center">
+                        <div class="team-member-img ">
+                            <img src="{% static 'assets/img/team/team-1.jpg' %}" alt="">
+                            <div class="member-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="member-details">
+                            <h3>Mark Angelila</h3>
+                            <p>Cras senunc massa quisque tempor dolor sit amet </p>
+                        </div>
+                    </div>
+                    <div class="single-team-member text-center">
+                        <div class="team-member-img ">
+                            <img src="{% static 'assets/img/team/team-2.jpg' %}" alt="">
+                            <div class="member-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="member-details">
+                            <h3>Angel Meskat</h3>
+                            <p>Cras senunc massa quisque tempor dolor sit amet </p>
+                        </div>
+                    </div>
+                    <div class="single-team-member text-center">
+                        <div class="team-member-img ">
+                            <img src="{% static 'assets/img/team/team-3.jpg' %}" alt="">
+                            <div class="member-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="member-details">
+                            <h3>Jon Doe</h3>
+                            <p>Cras senunc massa quisque tempor dolor sit amet </p>
+                        </div>
+                    </div>
+                    <div class="single-team-member text-center">
+                        <div class="team-member-img ">
+                            <img src="{% static 'assets/img/team/team-4.jpg' %}" alt="">
+                            <div class="member-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="member-details">
+                            <h3>Angel Di Maria</h3>
+                            <p>Cras senunc massa quisque tempor dolor sit amet </p>
+                        </div>
+                    </div>
+                    <div class="single-team-member text-center">
+                        <div class="team-member-img ">
+                            <img src="{% static 'assets/img/team/team-5.jpg' %}" alt="">
+                            <div class="member-social-bookmark">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="member-details">
+                            <h3>Park Ji Sung</h3>
+                            <p>Cras senunc massa quisque tempor dolor sit amet </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section class="team-area section-padding" id="team">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Our Chefs</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                {% if chefs %}
+                    <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 team-slider">
+
+                        {% for chef in chefs %}
+                            <div class="single-team-member text-center">
+                                <div class="team-member-img">
+                                    {% if chef.image %}
+                                        <img src="{{ chef.image.url }}" alt="{{ chef.name }}">
+                                    {% else %}
+                                        <img src="{% static 'assets/img/team/team-1.jpg' %}" alt="Waves and Wings Chef">
+                                    {% endif %}
+
+                                    {% if chef.facebook or chef.twitter or chef.instagram or chef.behance or chef.dribbble %}
+                                        <div class="member-social-bookmark">
+                                            <ul>
+                                                {% if chef.facebook %}
+                                                    <li><a href="{{ chef.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                                {% endif %}
+                                                {% if chef.twitter %}
+                                                    <li><a href="{{ chef.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                                {% endif %}
+                                                {% if chef.instagram %}
+                                                    <li><a href="{{ chef.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                                {% endif %}
+                                                {% if chef.behance %}
+                                                    <li><a href="{{ chef.behance }}" target="_blank"><i class="fa fa-behance"></i></a></li>
+                                                {% endif %}
+                                                {% if chef.dribbble %}
+                                                    <li><a href="{{ chef.dribbble }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                    {% endif %}
+
+                                </div>
+
+                                <div class="member-details">
+                                    <h3>{{ chef.name }}</h3>
+                                    <p>{{ chef.bio }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% else %}
+                    <div class="col-xs-12 text-center" style="color: #666; padding: 40px 0;">
+                        <p>Meet our talented kitchen team soon!</p>
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
+    <!--TEAM AREA END-->
+
+    <!--BLOG AREA-->
+    <!--<section class="blog-area section-padding" id="blog">
+        <div class="blog-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Latest News</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row post-slider">
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="single-post text-center">
+                        <div class="blog-post-img ">
+                            <img src="{% static 'assets/img/blog/blog-3.jpg' %}" alt="">
+                        </div>
+                        <div class="post-details">
+                            <h3><a href="single-blog.html">Recieved first day first reservation</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias itaque eaque deserunt atque laborum ex ad facilis praesentium placeat tenetur.</p>
+                            <p class="post-meta"><a href="#">24 February, 2017</a> - <a href="#">5 Comments</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="single-post text-center">
+                        <div class="blog-post-img ">
+                            <img src="{% static 'assets/img/blog/blog-1.jpg' %}" alt="">
+                        </div>
+                        <div class="post-details">
+                            <h3><a href="single-blog.html">Home to get your home delevery ?</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias itaque eaque deserunt atque laborum ex ad facilis praesentium placeat tenetur.</p>
+                            <p class="post-meta"><a href="#">24 February, 2017</a> - <a href="#">5 Comments</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
+                    <div class="single-post text-center">
+                        <div class="blog-post-img ">
+                            <img src="{% static 'assets/img/blog/blog-2.jpg' %}" alt="">
+                        </div>
+                        <div class="post-details">
+                            <h3><a href="single-blog.html">Restaurant welcome day meetup</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias itaque eaque deserunt atque laborum ex ad facilis praesentium placeat tenetur.</p>
+                            <p class="post-meta"><a href="#">24 February, 2017</a> - <a href="#">5 Comments</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!--<section class="gallery-area section-padding" id="gallery" style="background-color: #f8fafc;">
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="area-title">
+                    <h2>Our Gallery</h2>
+                    <p>Take a peek at our fresh ingredients, signature dishes, and vibrant atmosphere.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if gallery_images %}
+                    <div class="restaurant-gallery-slider owl-carousel">
+
+                        {% for item in gallery_images %}
+                            <div class="single-gallery-item" style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
+                                <img
+                                    src="{{ item.image.url }}"
+                                    alt="{{ item.title }} - Waves & Wings London"
+                                    loading="lazy"
+                                    style="width: 100%; height: 280px; object-fit: cover; display: block;"
+                                >
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                {% else %}
+                    <p class="text-center" style="color: #888;">Delicious photos coming soon!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>-->
+
+    <section class="blog-area gallery-area section-padding" id="gallery">
+    <div class="blog-area-bg" data-stellar-background-ratio="0.6"></div>
+
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="area-title text-center">
+                    <h2>Our Gallery</h2>
+                    <p style="color: #e0e0e0;">Take a peek at our fresh ingredients, signature dishes, and vibrant atmosphere.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                {% if gallery_images %}
+
+                    <div class="restaurant-gallery-slider post-slider owl-carousel">
+
+                        {% for item in gallery_images %}
+                            <div class="single-gallery-item" style="background: #ffffff; padding: 10px; border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+                                <img
+                                    src="{{ item.image.url }}"
+                                    alt="{{ item.title }} - Waves & Wings London"
+                                    loading="lazy"
+                                    style="width: 100%; height: 280px; object-fit: cover; display: block;"
+                                >
+                            </div>
+                        {% endfor %}
+
+                    </div>
+
+                {% else %}
+                    <p class="text-center" style="color: #e0e0e0;">Delicious photos coming soon!</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+    <!--BLOG AREA END-->
+
+    <!--INSTAGRAM GALLERY FEED-->
+<!--    <section class="gallery-area section-padding" id="gallery">
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="area-title text-center">
+                        <h2>Gallery</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="instagram-feed-content text-center">
+                        <div class="instagram" id="instagram"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section class="location-area section-padding" id="location">
+    <div class="container wow fadeIn">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="area-title text-center">
+                    <h2>Find Us In London</h2>
+                    <p>Come visit Waves & Wings for the best coastal crunch in the city.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="map-wrapper" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <iframe
+                        {% if contact_info and contact_info.address_url %}
+                            src="{{ contact_info.address_url }}"
+                        {% else %}
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d737.0830712768984!2d-0.26003641736251204!3d51.58212707316033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487611b770f8e84b%3A0x88dd515456ea9e40!2sEncore%20Kitchens%2C%20Knightsbridge%20House%2C%20Kingsbury%20Road!5e0!3m2!1sen!2sin!4v1778935701358!5m2!1sen!2sin"
+                        {% endif %}
+                        width="100%"
+                        height="450"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!--INSTAGRAM GALLERY FEED END-->
+
+    <!--FOOER AREA-->
+    <div class="footer-area" id="contact">
+        <div class="footer-area-bg" data-stellar-background-ratio="0.6"></div>
+        <div class="container wow fadeIn">
+            <div class="row">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                    <div class="footer-top section-padding text-center">
+                        <div class="footer-logo">
+                            <a href="{% url 'home' %}"><img class="footer-logo-img" src="{% static 'assets/img/main/logo2_bgr.png' %}" alt=""></a>
+                        </div>
+                        <div class="footer-address">
+                            {% if contact_info %}
+
+                                <p>{{ contact_info.address }}</p>
+
+                                <p><a href="mailto:{{ contact_info.email }}">{{ contact_info.email }}</a></p>
+                                <p><a href="tel:{{ contact_info.phone|cut:' ' }}">{{ contact_info.phone }}</a></p>
+
+                            {% else %}
+                                <p>40, Colindale, Knightsbridge House, Kingsbury Road, NW9 8XG</p>
+                                <p><a href="mailto:contact@infowavesandwings.co.uk">contact@infowavesandwings.co.uk</a></p>
+                                <p><a href="tel:+447721981295">+44 77 2198 1295</a></p>
+                            {% endif %}
+                        </div>
+                        <!--<div class="footer-social-bookmark">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-flickr"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                        </div>-->
+                        <div class="footer-social-bookmark">
+                            <ul>
+                                {% for social in social_links %}
+                                    <li>
+                                        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" title="{{ social.platform_name }}">
+                                            <i class="fa {{ social.icon_class }}"></i>
+                                        </a>
+                                    </li>
+                                {% empty %}
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="footer-menu">
+                        <ul>
+                            <!--<li><a href="#">Teams of use</a></li>
+                            <li><a href="#">Privicy Policy</a></li>
+                            <li><a href="#">SiteMap</a></li>
+                            <li><a href="#">Contact</a></li>-->
+                            <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
+                            <li><a href="{% url 'terms' %}">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
+                    <div class="footer-copyright">
+                        <p>&copy; 2026 <a href="#">Waves & Wings Restaurant</a> All Right Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--FOOER AREA END-->
+
+
+    <!--====== SCRIPTS JS ======-->
+    <!--<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">--></script>
+    <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
+
+    <!--====== PLUGINS JS ======-->
+    <script src="{% static 'assets/js/vendor/jquery.easing.1.3.js' %}"></script>
+    <script src="{% static 'assets/js/vendor/jquery-migrate-1.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.pogo-slider.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/stellar.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'assets/js/instafeed.min.js' %}"></script>
+    <script src="{% static 'assets/js/datepicker.min.js' %}"></script>
+    <script src="{% static 'assets/js/timepicker.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.sticky.js' %}"></script>
+
+    <!--===== ACTIVE JS=====-->
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+<script>
+        $(document).ready(function() {
+            // Wait 6 seconds (6000ms), then slide up and fade out smoothly
+            setTimeout(function() {
+                $(".django-messages-wrapper .alert").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove();
+                });
+            }, 6000);
+        });
+    </script>
+</body>
+
+
+</html>

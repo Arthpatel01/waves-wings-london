@@ -15,11 +15,11 @@ SECRET_KEY = 'django-insecure-8^h!2+m=d6)j5+g(js9(g1w^6+_8p_g$e@lpohn!i+#11nmhdp
 
 # =============== DEVELOPMENT / PRODUCTION ===============
 
-# Change this to False when deploying to production
-DEBUG = True
+# 3. SET TO FALSE FOR PRODUCTION
+DEBUG = False
 
 # Allowed hosts
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://187.77.180.249/', '187.77.180.249']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '187.77.180.249']
 
 # =============== DATABASE (Optional) ===============
 
@@ -40,7 +40,7 @@ if not DEBUG:
     # 3. Secure your Django Secret Key
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
     DEBUG = False
-    ALLOWED_HOSTS = ['yourdomain.com', 'www.yourdomain.com', '.yourdomain.com']
+    ALLOWED_HOSTS = ['infowavesandwings.co.uk', 'www.infowavesandwings.co.uk', '.infowavesandwings.co.uk', 'infowavesandwings']
 
 
 # =============== OTHER IMPORTANT SETTINGS ===============

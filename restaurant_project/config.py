@@ -31,6 +31,9 @@ DATABASE_CONFIG = {
 # =============== PRODUCTION SETTINGS (when DEBUG=False) ===============
 
 if not DEBUG:
+    print("========>")
+    ALLOWED_HOSTS = ['infowavesandwings.co.uk', 'www.infowavesandwings.co.uk', '.infowavesandwings.co.uk', 'infowavesandwings', "srv1673913.hstgr.cloud", "187.77.180.249"]
+
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -53,7 +56,8 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-    ALLOWED_HOSTS = ['infowavesandwings.co.uk', 'www.infowavesandwings.co.uk', '.infowavesandwings.co.uk', 'infowavesandwings']
+
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # =============== OTHER IMPORTANT SETTINGS ===============

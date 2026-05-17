@@ -34,12 +34,25 @@ if not DEBUG:
     # Build paths inside the project like this: BASE_DIR / 'subdir'.
     BASE_DIR = Path(__file__).resolve().parent.parent
 
-    # 2. Load the environment variables from the .env file
+    # Load the environment variables from the .env file
     load_dotenv(os.path.join(BASE_DIR, '.env'))
 
-    # 3. Secure your Django Secret Key
+    # Secure your Django Secret Key
     SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
-    DEBUG = False
+
+    # --- ADD THESE NEW SECURITY LINES ---
+
+    # 1. Force cookies to only be sent over HTTPS
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+
+    # 2. Tell Django to force HTTPS routing
+    SECURE_SSL_REDIRECT = True
+
+    # 3. Enable Strict Transport Security (HSTS) for 1 year
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
     ALLOWED_HOSTS = ['infowavesandwings.co.uk', 'www.infowavesandwings.co.uk', '.infowavesandwings.co.uk', 'infowavesandwings']
 
 

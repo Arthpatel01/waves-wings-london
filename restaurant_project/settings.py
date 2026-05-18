@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'AppUser',
     'AppMenu',
     'AppHome',
+    'sslserver',
 ]
 
 MIDDLEWARE = [

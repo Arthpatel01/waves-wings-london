@@ -111,7 +111,7 @@ class IndexView(View):
 
         # =========== Restaurant Contact Info ===================
         # .first() safely gets the first record, or returns None if the database is empty
-        context['contact_info'] = RestaurantInfo.objects.first()
+        context['contact_info'] = RestaurantInfo.objects.filter(is_active=True).first()
 
         # =========== Gallery Images ===================
         # Fetch all active images ordered by their display order

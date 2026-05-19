@@ -44,19 +44,19 @@ if not DEBUG:
 
     # --- ADD THESE NEW SECURITY LINES ---
 
-    # 1. Force cookies to only be sent over HTTPS
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-
-    # 2. Tell Django to force HTTPS routing
-    SECURE_SSL_REDIRECT = True
-
-    # 3. Enable Strict Transport Security (HSTS) for 1 year
-    SECURE_HSTS_SECONDS = 31536000
-    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-    SECURE_HSTS_PRELOAD = True
-
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    # # 1. Force cookies to only be sent over HTTPS
+    # SESSION_COOKIE_SECURE = True
+    # CSRF_COOKIE_SECURE = True
+    #
+    # # 2. Tell Django to force HTTPS routing
+    # SECURE_SSL_REDIRECT = True
+    #
+    # # 3. Enable Strict Transport Security (HSTS) for 1 year
+    # SECURE_HSTS_SECONDS = 31536000
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    # SECURE_HSTS_PRELOAD = True
+    #
+    # SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # =============== OTHER IMPORTANT SETTINGS ===============

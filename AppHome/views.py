@@ -86,8 +86,9 @@ class IndexView(View):
 
         # ========== 6. Menu Categories (for navigation) ==========
         categories = Category.objects.filter(
+            is_active=True,
             is_visible=True
-        ).values("name", "slug").order_by('display_order')[:8]
+        ).values("name", "slug").order_by('display_order')
         # Get top 8 categories
         context['categories'] = categories
         # =========== Menu Items ===================
@@ -103,7 +104,7 @@ class IndexView(View):
             'zero_last_order',  # Pushes 0 values to bottom
             'display_order',  # Sorts active values ascending (1, 2, 3...)
             'name'  # Alphabetical fallback if order numbers match
-        ).values("menu_item_id", "name", "description", "price", "image", "category__slug", "display_order")[:6]
+        ).values("menu_item_id", "name", "description", "price", "image", "category__slug", "display_order")
         context['menu_items'] = menu_items
 
         # =========== 3. Dynamic Special Promotions Packages ===================

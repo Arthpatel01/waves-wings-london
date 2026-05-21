@@ -102,6 +102,7 @@ class IndexView(View):
             )
         ).order_by(
             'zero_last_order',  # Pushes 0 values to bottom
+            'category__display_order',  # Sorts categories first
             'display_order',  # Sorts active values ascending (1, 2, 3...)
             'name'  # Alphabetical fallback if order numbers match
         ).values("menu_item_id", "name", "description", "price", "image", "category__slug", "display_order")

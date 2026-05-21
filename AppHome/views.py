@@ -3,13 +3,14 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.contrib import messages
 from django.utils import timezone
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Case, When, Value, IntegerField
 from django.conf import settings
 
 from AppHome.models import Reservation, SocialLink, RestaurantInfo, GalleryImage, Chef
 # Import models from other apps
 from AppMenu.models import MenuItem, Category, DailySpecial, SpecialPackage
 from AppUser.models import User
+
 
 def handle_reservation(self, request):
     """
@@ -21,7 +22,7 @@ def handle_reservation(self, request):
     mobile = request.POST.get('mobile', '').strip()
     date = request.POST.get('date', '')
     time = request.POST.get('time', '')
-    guests = request.POST.get('person', '') # Fixed from 'guests' to 'person'
+    guests = request.POST.get('person', '')  # Fixed from 'guests' to 'person'
 
     if not all([name, email, mobile, date, time, guests]):
         messages.error(request, 'Please fill in all reservation fields.')
@@ -47,6 +48,7 @@ def handle_reservation(self, request):
     # 3. Return Success Message
     messages.success(request, f'Reservation confirmed for {guests} guests on {date} at {time}!')
     return redirect('home')
+
 
 class IndexView(View):
     """
@@ -90,8 +92,18 @@ class IndexView(View):
         context['categories'] = categories
         # =========== Menu Items ===================
         menu_items = MenuItem.objects.filter(
-            is_available=True,is_active=True
-        ).values("menu_item_id", "name", "description", "price", "image", "category__slug")[:6]
+            is_available=True, is_active=True
+        ).annotate(
+            zero_last_order=Case(
+                When(display_order=0, then=Value(1)),
+                default=Value(0),
+                output_field=IntegerField(),
+            )
+        ).order_by(
+            'zero_last_order',  # Pushes 0 values to bottom
+            'display_order',  # Sorts active values ascending (1, 2, 3...)
+            'name'  # Alphabetical fallback if order numbers match
+        ).values("menu_item_id", "name", "description", "price", "image", "category__slug", "display_order")[:6]
         context['menu_items'] = menu_items
 
         # =========== 3. Dynamic Special Promotions Packages ===================
@@ -190,7 +202,8 @@ class IndexView(View):
         # self.send_whatsapp_notification(name, mobile, date, time, guests)
 
         # 3. Return Success Message
-        messages.success(request, f'Reservation request submitted for {guests} guests on {date} at {time}. We will verify availability and notify you soon!')
+        messages.success(request,
+                         f'Reservation request submitted for {guests} guests on {date} at {time}. We will verify availability and notify you soon!')
         return redirect('home')
 
 
@@ -231,6 +244,7 @@ class IndexViewWithTemplate(TemplateView):
 # Add these alongside your existing IndexView
 class PrivacyPolicyView(TemplateView):
     template_name = 'privacy.html'
+
 
 class TermsConditionsView(TemplateView):
     template_name = 'terms.html'

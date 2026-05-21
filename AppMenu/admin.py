@@ -215,6 +215,7 @@ class MenuItemAdmin(admin.ModelAdmin):
         'menu_item_id',
         'name_preview',
         'category',
+        'display_order',  # ✅ Added to table view
         'price_display',
         'availability_badge',
         'dietary_badges',
@@ -246,20 +247,20 @@ class MenuItemAdmin(admin.ModelAdmin):
         'ingredients',
     ]
 
-    # list_editable = [
-        # 'price',
-        # 'is_available',
-        # 'is_recommended',
-    # ]
+    # ✅ Activated list_editable so you can change values directly from the main list table
+    list_editable = [
+        'display_order',
+    ]
 
     list_per_page = 25
-    ordering = ['category__display_order', 'name']
+    ordering = ['category__display_order', 'display_order', 'name']
 
     # Form layout with rich text support
     fieldsets = (
         ('Basic Information', {
             'fields': (
                 'category',
+                'display_order',  # ✅ Added to detail form view as well
                 'name',
                 'slug',
                 'short_description',
@@ -429,7 +430,6 @@ class MenuItemAdmin(admin.ModelAdmin):
 
     def orders_count(self, obj):
         """Display orders count (placeholder - implement when Order model exists)"""
-        # This will be implemented when you create Order model
         return "-"
 
     orders_count.short_description = "Orders"
@@ -475,14 +475,14 @@ class MenuItemAdmin(admin.ModelAdmin):
         updated = queryset.update(is_recommended=False)
         self.message_user(request, f'{updated} items removed from recommended.')
 
-    @admin.action(description='Increase price by 10%%')  # Double %%
+    @admin.action(description='Increase price by 10%%')
     def increase_price_by_10_percent(self, request, queryset):
         for item in queryset:
             item.price = item.price * 1.10
             item.save()
         self.message_user(request, f'{queryset.count()} items increased by 10%.')
 
-    @admin.action(description='Decrease price by 10%%')  # Double %%
+    @admin.action(description='Decrease price by 10%%')
     def decrease_price_by_10_percent(self, request, queryset):
         for item in queryset:
             item.price = item.price * 0.90

@@ -217,6 +217,13 @@ class MenuItem(BaseModel):
         help_text="Cost to make (for profit calculation)"
     )
 
+    # ========== DISPLAY SETTINGS ==========
+    display_order = models.PositiveIntegerField(
+        default=0,
+        db_index=True,
+        help_text="Order in which items appear (lower numbers first)"
+    )
+
     # ========== DIETARY OPTIONS ==========
     is_vegetarian = models.BooleanField(
         default=False,
@@ -354,7 +361,7 @@ class MenuItem(BaseModel):
         db_table = 'app_menu_item'
         verbose_name = 'Menu Item'
         verbose_name_plural = 'Menu Items'
-        ordering = ['category__display_order', 'name']
+        ordering = ['category__display_order', 'display_order', 'name']
         indexes = [
             models.Index(fields=['category', 'is_available']),
             models.Index(fields=['price']),
@@ -362,6 +369,7 @@ class MenuItem(BaseModel):
             models.Index(fields=['is_recommended']),
             models.Index(fields=['is_new']),
             models.Index(fields=['slug']),
+            models.Index(fields=['display_order']),
         ]
 
     # ========== PROPERTIES ==========

@@ -136,10 +136,7 @@ class IndexView(View):
 
         delivery_platforms = DeliveryPlatform.objects.filter(is_active=True).order_by('display_order')
 
-        context = {
-            # Your existing context...
-            'delivery_platforms': delivery_platforms,
-        }
+        context['delivery_platforms'] = delivery_platforms
 
         return context
 

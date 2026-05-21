@@ -6,7 +6,7 @@ from django.utils import timezone
 from django.db.models import Count, Q, Case, When, Value, IntegerField
 from django.conf import settings
 
-from AppHome.models import Reservation, SocialLink, RestaurantInfo, GalleryImage, Chef
+from AppHome.models import Reservation, SocialLink, RestaurantInfo, GalleryImage, Chef, DeliveryPlatform
 # Import models from other apps
 from AppMenu.models import MenuItem, Category, DailySpecial, SpecialPackage
 from AppUser.models import User
@@ -133,6 +133,13 @@ class IndexView(View):
 
         # =========== Chefs / Team ===================
         context['chefs'] = Chef.objects.filter(is_active=True).order_by('display_order')
+
+        delivery_platforms = DeliveryPlatform.objects.filter(is_active=True).order_by('display_order')
+
+        context = {
+            # Your existing context...
+            'delivery_platforms': delivery_platforms,
+        }
 
         return context
 

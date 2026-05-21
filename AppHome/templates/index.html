@@ -8,17 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="Discover Waves & Wings in London! Enjoy our signature golden-battered haddock, crispy chicken wings, gourmet burgers, and loaded fries. Book a table today." />
-    <meta name="keywords" content="Waves and Wings, London restaurant, Colindale, NW9 8XG, fish and chips, haddock, crispy chicken wings, spicy wings, seafood, burgers, loaded fries, takeaway, food delivery" />
+    <meta name="description" content="Waves & Wings is London's premium cloud kitchen serving signature golden-battered haddock, crispy chicken wings, and loaded fries. Fast delivery and takeaway." />    <meta name="keywords" content="Waves and Wings, London restaurant, Colindale, NW9 8XG, fish and chips, haddock, crispy chicken wings, spicy wings, seafood, burgers, loaded fries, takeaway, food delivery" />
+    <meta name="keywords" content="Waves and Wings, London cloud kitchen, takeaway, dark kitchen, food delivery, Colindale, NW9 8XG, fish and chips, crispy chicken wings, Uber Eats, Just Eat, Deliveroo" />
     <meta name="author" content="Waves & Wings" />
 
-    <meta property="og:title" content="Waves & Wings | Coastal Seafood & Crispy Chicken in London" />
-    <meta property="og:description" content="Welcome to the best coastal crunch in London! Check out our menu of fresh seafood, signature wings, and meal deals." />
+    <meta property="og:title" content="Waves & Wings | London Delivery & Takeaway" />
+    <meta property="og:description" content="Craving coastal crunch? Order fast delivery or click & collect from London's finest seafood and chicken cloud kitchen." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.yourdomain.co.uk/" /> <meta property="og:image" content="{% static 'assets/img/main/logo2_bgr.png' %}" />
+    <meta property="og:url" content="https://www.yourdomain.co.uk/" />
+    <meta property="og:image" content="{% static 'assets/img/main/logo2_bgr.png' %}" />
     <meta property="og:site_name" content="Waves & Wings" />
 
-    <title>Waves & Wings | Seafood & Crispy Chicken in London</title>
+    <!--<title>Waves & Wings | Seafood & Crispy Chicken in London</title>-->
+    <title>Waves & Wings | Premium Cloud Kitchen & Takeaway in London</title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="{% static 'assets/img/favi/favicon.ico' %}" />
@@ -148,11 +150,11 @@
         </div>
 
         <!--HHOME SLIDER AREA-->
-        <div class="slider-area">
+        <!--<div class="slider-area">
             <div class="pogoSlider">
                 <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url({% static 'assets/img/slider/slide_1.jpg' %}) no-repeat scroll 0 0 / cover;">
                     <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Welcome to</h2>
-                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500"><span>Waves & Wings</span> Cafe & Restaurant</h1>
+                    <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500"><span>Waves & Wings</span> &lt;!&ndash;Cafe & Restaurant&ndash;&gt;</h1>
                     <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a  href="#reservation-form-modal" data-toggle="modal">Reservation Now</a></h3>
                 </div>
                 <div class="pogoSlider-slide" data-transition="fade" style="background:url({% static 'assets/img/slider/slide_2.jpg' %}) no-repeat scroll 0 0 / cover;">
@@ -166,7 +168,27 @@
                     <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a  href="#reservation-form-modal" data-toggle="modal">Book A Table</a></h3>
                 </div>
             </div>
+        </div>-->
+
+        <div class="slider-area">
+    <div class="pogoSlider">
+        <div class="pogoSlider-slide" data-transition="fade" data-duration="1500" style="background:url({% static 'assets/img/slider/slide_1.jpg' %}) no-repeat scroll 0 0 / cover;">
+            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Welcome to</h2>
+            <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500"><span>Waves & Wings</span></h1>
+            <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#delivery-apps-modal" data-toggle="modal">Order Delivery Now</a></h3>
         </div>
+        <div class="pogoSlider-slide" data-transition="fade" style="background:url({% static 'assets/img/slider/slide_2.jpg' %}) no-repeat scroll 0 0 / cover;">
+            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Our Menus</h2>
+            <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">See What's <span>Cooking</span> Today</h1>
+            <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#menu">View Full Menu</a></h3>
+        </div>
+        <div class="pogoSlider-slide" data-transition="fade" style="background:url({% static 'assets/img/slider/slide_3.jpg' %}) no-repeat scroll 0 0 / cover;">
+            <h2 class="pogoSlider-slide-element" data-in="slideDown" data-out="flipX" data-duration="700">Craving Crunch?</h2>
+            <h1 class="pogoSlider-slide-element" data-in="expand" data-out="flipX" data-duration="1500">Get It <span>Delivered</span> Fast</h1>
+            <h3 class="pogoSlider-slide-element" data-in="slideUp" data-out="flipX" data-duration="700"><a href="#delivery-apps-modal" data-toggle="modal">Order Online</a></h3>
+        </div>
+    </div>
+</div>
         <!--HOME SLIDER AREA END-->
 
     </header>
@@ -366,7 +388,7 @@
                 {% endif %}
             </div>
             <div class="food-menu-text-custom">
-                <h3>{{ item.name }} <span class="menu-price">${{ item.price }}</span></h3>
+                <h3>{{ item.name }} <span class="menu-price">£{{ item.price }}</span></h3>
                 <p class="menu-speacification"><span>- {{ item.description }}</span></p>
             </div>
         </div>
@@ -378,7 +400,7 @@
     <!--MENUS AREA END-->
 
     <!--RESERVATION BUTTON AREA-->
-    <section class="reservation-button-area section-padding" id="reservation-button">
+    <!--<section class="reservation-button-area section-padding" id="reservation-button">
         <div class="reservation-button-area-bg" data-stellar-background-ratio="0.6"></div>
         <div class="container">
             <div class="row">
@@ -391,8 +413,8 @@
             </div>
             <div class="row">
                 <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-                    <!-- RESERVATION FORM MODAL -->
-                    <!--<div class="modal fade" id="reservation-form-modal" tabindex="-1" role="dialog">
+                    &lt;!&ndash; RESERVATION FORM MODAL &ndash;&gt;
+                    &lt;!&ndash;<div class="modal fade" id="reservation-form-modal" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -445,7 +467,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>-->
+                    </div>&ndash;&gt;
 
                     <div class="modal fade modern-booking-modal" id="reservation-form-modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -515,12 +537,65 @@
         </div>
     </div>
 </div>
-                    <!-- RESERVATION FORM MODAL -->
+                    &lt;!&ndash; RESERVATION FORM MODAL &ndash;&gt;
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <!--RESERVATION BUTTON AREA END-->
+
+    <section class="reservation-button-area section-padding" id="reservation-button">
+    <div class="reservation-button-area-bg" data-stellar-background-ratio="0.6"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="resarvation-from-button text-center wow fadeIn">
+                    <h2>Craving Coastal Crunch?</h2>
+                    <p style="color: white; font-size: 18px; margin-bottom: 20px;">Get Waves & Wings delivered fresh and fast directly to your door.</p>
+                    <a href="#delivery-apps-modal" class="reservation-button" data-toggle="modal">Order Delivery Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                <div class="modal fade" id="delivery-apps-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 400px; margin-top: 10vh;">
+                        <div class="modal-content" style="border-radius: 12px; overflow: hidden;">
+                            <div class="modal-header" style="background-color: #f8f9fa; border-bottom: 1px solid #eee; padding: 20px;">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-size: 28px; outline: none;">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <h4 class="modal-title text-center" style="margin: 0; font-weight: 700; color: #333;">Order Delivery</h4>
+                            </div>
+                            <div class="modal-body text-center" style="padding: 30px 20px;">
+                                <p style="margin-bottom: 25px; color: #666; font-size: 15px;">Choose your preferred delivery partner to order from Waves & Wings London:</p>
+
+                                <div class="delivery-options" style="display: flex; flex-direction: column; gap: 15px;">
+                                    {% for platform in delivery_platforms %}
+                                        <a href="{{ platform.url }}" target="_blank" style="display: flex; align-items: center; justify-content: center; padding: 16px; font-size: 16px; font-weight: bold; border-radius: 8px; background-color: #ffffff; color: #333; border: 2px solid #eaeaea; text-decoration: none; transition: all 0.2s ease-in-out; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+                                            {% if platform.logo %}
+                                                <img src="{{ platform.logo.url }}" alt="{{ platform.name }} Logo" style="height: 28px; margin-right: 12px; object-fit: contain;">
+                                            {% endif %}
+                                            Order on {{ platform.name }}
+                                        </a>
+                                    {% empty %}
+                                        <p style="color: #999; font-style: italic;">Our delivery links are being updated. Please check back soon!</p>
+                                    {% endfor %}
+                                </div>
+                                <div class="price-disclaimer" style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee;">
+                                    <p style="font-size: 12px; color: #999; line-height: 1.4;">
+                                        <em>Note: Prices on third-party delivery apps may vary from in-store/website menu pricing due to service commissions.</em>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+</section>
 
     <!--TEAM AREA-->
     <!--<section class="team-area section-padding" id="team">
@@ -942,7 +1017,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="footer-copyright">
-                        <p>&copy; 2026 <a href="#">Waves & Wings Restaurant</a> All Right Reserved.</p>
+                        <p>&copy; 2026 <a href="#">Waves & Wings</a> All Right Reserved.</p>
                     </div>
                 </div>
             </div>

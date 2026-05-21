@@ -183,3 +183,17 @@ class Chef(BaseModel):
 
     def __str__(self):
         return self.name
+
+
+class DeliveryPlatform(models.Model):
+    name = models.CharField(max_length=50, help_text="e.g., Uber Eats, Just Eat, Deliveroo")
+    url = models.URLField(help_text="Link to your restaurant's page on this app")
+    logo = models.ImageField(upload_to='delivery_logos/', blank=True, null=True, help_text="Upload the app's logo")
+    is_active = models.BooleanField(default=True)
+    display_order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['display_order']
+
+    def __str__(self):
+        return self.name

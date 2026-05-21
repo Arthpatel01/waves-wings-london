@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html  # Import this for safe HTML rendering
-from .models import Reservation, SocialLink, RestaurantInfo, GalleryImage, Chef
+from .models import Reservation, SocialLink, RestaurantInfo, GalleryImage, Chef, DeliveryPlatform
 
 
 @admin.register(Reservation)
@@ -151,3 +151,70 @@ class ChefAdmin(admin.ModelAdmin):
         return "No Image"
 
     image_preview.short_description = 'Photo'
+
+
+@admin.register(DeliveryPlatform)
+class DeliveryPlatformAdmin(admin.ModelAdmin):
+    """
+    Admin configuration for Delivery Platforms (Cloud Kitchen Links)
+    """
+
+    # What shows up in the main table view
+    list_display = [
+        'name',
+        'logo_preview',
+        'is_active',
+        'display_order',
+        'url_link'
+    ]
+
+    # Allows you to quickly change order and toggle active status directly from the list
+    list_editable = [
+        'is_active',
+        'display_order'
+    ]
+
+    # Add a filter sidebar
+    list_filter = [
+        'is_active',
+    ]
+
+    # Add a search bar
+    search_fields = [
+        'name',
+        'url'
+    ]
+
+    # Default sorting
+    ordering = ['display_order', 'name']
+
+    # Field layout when creating/editing a platform
+    fieldsets = (
+        ('Platform Details', {
+            'fields': ('name', 'url', 'logo')
+        }),
+        ('Display Settings', {
+            'fields': ('is_active', 'display_order'),
+            'description': 'Control whether this platform shows up on the live site and in what order.'
+        }),
+    )
+
+    # ===== Custom Display Methods =====
+
+    def logo_preview(self, obj):
+        """Shows a tiny preview of the logo in the admin table"""
+        if obj.logo:
+            from django.utils.html import format_html
+            return format_html('<img src="{}" style="height: 25px; object-fit: contain;" />', obj.logo.url)
+        return "-"
+
+    logo_preview.short_description = "Logo"
+
+    def url_link(self, obj):
+        """Makes the URL clickable right from the admin table"""
+        if obj.url:
+            from django.utils.html import format_html
+            return format_html('<a href="{}" target="_blank">Test Link ↗</a>', obj.url)
+        return "-"
+
+    url_link.short_description = "Link"

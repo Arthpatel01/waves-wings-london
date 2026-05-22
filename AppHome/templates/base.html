@@ -13,12 +13,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Waves & Wings Restaurant is a simple restaraunt website for restaurant business" />
-    <meta name="keywords" content="restaurant, pizza, burger, business, house, online, delevery, html, coffee, cafe, bar" />
-    <meta name="author" content="BDEXPERT" />
 
-    <!--====== TITLE TAG ======-->
-    <title>{% block title %}Waves & Wings Restaurant{% endblock %}</title>
+    <meta name="google-site-verification" content="QoK24S28i-8f5mJnSR4x0nJl9v_3SSAti_yGWRk0RMc" />
+
+    <meta name="description" content="W2aves & Wings is London's premium cloud kitchen serving signature golden-battered haddock, crispy chicken wings, and loaded fries. Fast delivery and takeaway." />    <meta name="keywords" content="Waves and Wings, London restaurant, Colindale, NW9 8XG, fish and chips, haddock, crispy chicken wings, spicy wings, seafood, burgers, loaded fries, takeaway, food delivery" />
+    <meta name="keywords" content="Waves and Wings, London cloud kitchen, takeaway, dark kitchen, food delivery, Colindale, NW9 8XG, fish and chips, crispy chicken wings, Uber Eats, Just Eat, Deliveroo" />
+    <meta name="author" content="Waves & Wings" />
+
+    <meta property="og:title" content="Waves & Wings | London Delivery & Takeaway" />
+    <meta property="og:description" content="Craving coastal crunch? Order fast delivery or click & collect from London's finest seafood and chicken cloud kitchen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.yourdomain.co.uk/" />
+    <meta property="og:image" content="{% static 'assets/img/main/logo2_bgr.png' %}" />
+    <meta property="og:site_name" content="Waves & Wings" />
+
+    <!--<title>Waves & Wings | Seafood & Crispy Chicken in London</title>-->
+    <title>{% block title %}Waves & Wings{% endblock %}</title>
 
     <!--====== FAVICON ICON =======-->
     <link rel="shortcut icon" type="image/ico" href="{% static 'assets/img/favi/favicon.ico' %}" />
@@ -39,10 +49,6 @@
     <link href="{% static 'assets/css/responsive.css' %}" rel="stylesheet">
 
     <script src="{% static 'assets/js/vendor/modernizr-2.8.3.min.js' %}"></script>
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     {% block extra_css %}{% endblock %}
 </head>
 
@@ -62,9 +68,6 @@
         </div>
     {% endif %}
 
-    <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
 
     <!--- PRELOADER -->
     <div class="preeloader">
@@ -84,7 +87,8 @@
 
 
 
-<div class="footer-area" id="contact">
+    <!--FOOER AREA-->
+    <div class="footer-area" id="contact">
         <div class="footer-area-bg" data-stellar-background-ratio="0.6"></div>
         <div class="container wow fadeIn">
             <div class="row">
@@ -118,6 +122,20 @@
                                 <li><a href="#"><i class="fa fa-skype"></i></a></li>
                             </ul>
                         </div>-->
+                        <div class="footer-social-bookmark">
+                            <ul>
+                                {% for social in social_links %}
+                                    <li>
+                                        <a href="{{ social.url }}" target="_blank" rel="noopener noreferrer" title="{{ social.platform_name }}">
+                                            <i class="fa {{ social.icon_class }}"></i>
+                                        </a>
+                                    </li>
+                                {% empty %}
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -137,7 +155,7 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <div class="footer-copyright">
-                        <p>&copy; 2026 <a href="#">Waves & Wings Restaurant</a> All Right Reserved.</p>
+                        <p>&copy; 2026 <a href="#">Waves & Wings</a> All Right Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -147,7 +165,6 @@
 
 
     <!--====== SCRIPTS JS ======-->
-    <!--<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js">--></script>
     <script src="{% static 'assets/js/vendor/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}"></script>
 
